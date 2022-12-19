@@ -1,3 +1,4 @@
+# Writing good pull requests
 <mark>The words below are part of the Wonderbly developer guide. I contributed a little but this is mainly the work of [Hraban Luyat](https://www.linkedin.com/in/hraban/) and [Lev Perlman](https://www.linkedin.com/in/justlev2/). They are great devs and I am grateful to have worked with them both.</mark>
 
 Pull Requests are about telling a story. What kind of story are you telling? Is it the creation of a new feature, or how a bug has been fixed, or why an improvement needs to be made? Put yourself in the mindset of the reviewer, what does that person need to know to understand your story and be able to do their job.
