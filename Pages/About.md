@@ -6,16 +6,18 @@ You've found yourself on my personal site. This is where I keep public notes and
 
 Here's a page on my background if you want to know more about me. 
 
-Some posts contain pearls of wisdom I learned from some great people I have been lucky enough to know and work with.  I always cite the original author when I knowingly do this. But please [[Contact me]] if you see something that's yours!
+Some posts contain pearls of wisdom I learned from some great people I have been lucky enough to know and work with.  I always cite the original author when I knowingly do this. But please [[Contact]] me if you see something that's yours!
 
 I'm learning all the time. The contents in any post may well have changed in my mind since I wrote it. I might go back and update but I probably won't. Being wrong or misinformed at some point in time should be a given. The only person I aim to please on the internet is myself.
 
 I write using [Obsidian](https://obsidian.md) and appreciate the community who have inspired me enough to create my own detailed notes and every so often publish one of them here.
 
 ## Wonderbly
-For my day job I am CTO of [Wonderbly](https://www.wonderbly.com/). 
+I am CTO at [Wonderbly](https://www.wonderbly.com/). 
 
-I run the business with my co-execs under the CEO.  I manage the software development teams inside Wonderbly.  I am forever improving the machine we have built to bring our amazingly personalised products to ever more people.
+I help run the business with the other execs and CEO.  I manage the software development teams inside Wonderbly.  We are forever improving the machine we have built to bring our amazingly personalised products to ever more people.
+
+I love working there. You probably would too. Naturally, [we're hiring](https://wonderbly.jobs.personio.com).
 
 ## Previous
 Previous tech jobs include:
