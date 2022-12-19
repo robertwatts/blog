@@ -1,6 +1,8 @@
+# About
+
 Hi, I'm Rob Watts 👋
 
-You've found yourself on my personal site. This is where I keep my public notes. 
+You've found yourself on my personal site. This is where I keep public notes and blog posts. 
 
 Here's a page on my background if you want to know more about me. 
 
