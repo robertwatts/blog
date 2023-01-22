@@ -1,4 +1,4 @@
-# Let people go
+- [ ] # Let people go
 If someone comes to you and says something like:
 
 > I've found a new job, it pays me X% more. I'm going to leave unless you can beat it.
