@@ -1,0 +1,1 @@
+{"type":"entry","post-type":"note","content":{"html":"<p>Testing blot.im integration with Indiekit</p>","text":"Testing blot.im integration with Indiekit"},"mp-syndicate-to":["https://social.lol/@robwatts"],"mp-slug":"test-from-indiekit","visibility":"public","post-status":"published","published":"2023-01-29T21:20:40.555Z","url":"https://robwatts.org/test-from-indiekit"}
