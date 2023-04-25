@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<title>Rob Watts</title>
+	<subtitle>General description of the blog</subtitle>
+	<link href="http://localhost:3000/feed.xml" rel="self"/>
+	<link href="http://localhost:3000/"/>
+	
+	<updated>2023-04-25T22:30:20+01:00</updated>
+	<id>http://localhost:3000/</id>
+</feed>

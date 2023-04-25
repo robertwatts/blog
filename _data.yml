@@ -1,0 +1,13 @@
+home:
+  welcome: Hello.
+
+menu_links: []
+
+# Metas plugin https://lume.land/plugins/metas/#description
+metas:
+  site: Rob Watts
+  description: General description of the blog
+  title: "=title"
+  image: "=image"
+  twitter: "@rwatts_"
+  lang: en-gb

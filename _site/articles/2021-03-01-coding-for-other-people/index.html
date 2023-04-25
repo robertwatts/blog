@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html><head><meta property="og:type" content="website">
+<meta property="og:site_name" content="Rob Watts">
+<meta property="og:locale" content="en-gb">
+<meta property="og:description" content="General description of the blog">
+<meta property="og:url" content="http://localhost:3000/articles/2021-03-01-coding-for-other-people/">
+<meta name="twitter:description" content="General description of the blog">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@rwatts_">
+<meta itemprop="description" content="General description of the blog">
+<meta name="description" content="General description of the blog">
+</head><body><h1>Coding for other people</h1>
+<p><mark>The words below are part of the Wonderbly developer guide. All credit should go to <a href="https://www.linkedin.com/in/hraban/">Hraban Luyat</a>. He's an incredibly smart guy and you'll be lucky to have him on your team.</mark></p>
+<p>This note is about the importance of writing code with other people in mind. Knowing that the poor sap who has to deal with your crappy code is a colleague you respect, someone you may never meet or (very likely) you.</p>
+<h2 id="considering-other-people" tabindex="-1"><a href="#considering-other-people" class="header-anchor">Considering other people</a></h2>
+<p>What really, at its core, is programming about? What are the most common causes of friction and losses of efficiency in the programming process?</p>
+<p>To gain some insight into this matter, make sure always to consider your coworkers. You write and contribute code not for yourself, but for your colleagues (and for your future self, who will have forgotten everything that present self knows). This includes colleagues who have not joined yet, colleagues who will join after you are gone, even after you and everyone presently working with you are gone. When all that remains is the work; how is it used, and how can it be made to optimally speak for itself?</p>
+<p>All our dogma, every rule we have, all of it attempts to optimise for that scenario. That is where, we believe, the most fundamental gains in efficiency (and morale) can be achieved. This point of view underpins our entire methodology, and should be kept in mind when reading this document.</p>
+<h2 id="great-code-is-easily-understood" tabindex="-1"><a href="#great-code-is-easily-understood" class="header-anchor">Great code is easily understood</a></h2>
+<p>The most important job that code has is: <strong>to be understood by your colleagues, both present and future</strong>.</p>
+<p>Fulfilling its intended purpose correctly (aka "working without bugs") is number 2; because understood, broken code can be fixed; but working, misunderstood code will break and then cannot be fixed.</p>
+<p>In order to understand code, a programmer (your colleague, or future you) will navigate the code using those two perspectives. They tend to go through these phases, in order:</p>
+<ol>
+<li>Read the least amount of actual code to get a vague idea of how it works, change the minimal amount of code to achieve their task, ignore everything else. Don't read comments, don't read docs, don't read unrelated code.</li>
+<li>If this doesn't work: attempt to read some comments close to the code they think is relevant, maybe some related function definitions and types, some calling code.</li>
+<li>Nightmare: the task still can't be completed. Curse whoever wrote this spaghetti, a pox on who hired this tool. I am relegated to reading documentation, ugh. This troglodyte was apparently not aware of the maxim "good code is self documenting".</li>
+<li>I need to see who this idiot was. I have to see their face. Who could be this obtuse. What absolute waste of oxygen produced this nightmare. <code>git blame</code>. Oh, it was me 6 months ago.</li>
+</ol>
+<p>Point being: people only open a project when they have a specific job to do. That task is their only priority, and they will (want to) spend the absolute minimum amount of mental energy learning about any idiosyncrasies of this project. Nobody will open this project just because. Nobody will know, nor care, about the conventions, about the unwritten rules, or even the rules written in bold letters in the README. Don't get frustrated by this: it is wasted energy. Rather, accept it as true, and write code that is resilient to it.</p>
+<p><strong>Great code is easily understood.</strong> Above all else. It can be understood using those two dimensions: the code &amp; comments themselves (1), and sometimes, in the extreme, the history of how it came to be (2).</p>
+<h2 id="be-demanding-now-to-avoid-burdening-the-future" tabindex="-1"><a href="#be-demanding-now-to-avoid-burdening-the-future" class="header-anchor">Be demanding now to avoid burdening the future</a></h2>
+<p>As developers, we need to think of the code we write as our personal product with our fellow developers as customers. The reverse is also true, we must act as demanding customers when presented with our fellow developers code.</p>
+<p>New code must be maintained, likely by developers who the submitter or reviewer will never meet. For that reason we must be mindful of burdening future developers with changes we make now.20</p>
+</body></html>

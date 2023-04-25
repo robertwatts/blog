@@ -1,0 +1,8 @@
+{
+  "version": "https://jsonfeed.org/version/1",
+  "title": "Rob Watts",
+  "home_page_url": "http://localhost:3000/",
+  "feed_url": "http://localhost:3000/feed.json",
+  "description": "General description of the blog",
+  "items": []
+}
