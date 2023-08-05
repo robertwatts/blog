@@ -1,0 +1,117 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@layouts/Layout.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import LinkButton from "@components/LinkButton.astro";
+import Hr from "@components/Hr.astro";
+import IndieWebPost from "@components/IndieWebPost.astro";
+import Socials from "@components/Socials.astro";
+import getSortedPosts from "@utils/getSortedPosts";
+import { SOCIALS } from "@config";
+
+const posts = await getCollection("blog");
+
+const sortedPosts = getSortedPosts(posts);
+
+const socialCount = SOCIALS.filter(social => social.active).length;
+---
+
+<Layout>
+  <Header />
+  <main id="main-content">
+    <section id="hero">
+      <h1>Hello there.</h1>
+      <p>
+        You've found yourself on my personal site. <br />
+        Posts are mostly for my own amusement. <br />
+        There might be something on here for you, who knows?
+      </p>
+      <p>
+        You can 
+        <LinkButton
+          className="hover:text-skin-accent underline underline-offset-4 decoration-dashed"
+          href="about"
+        >
+          find out more about me
+        </LinkButton>, if you're interested.
+      </p>
+      {
+        // only display if at least one social link is enabled
+        socialCount > 0 && (
+          <div class="social-wrapper">
+            <div class="social-links">How to find me:</div>
+            <Socials />
+          </div>
+        )
+      }
+    </section>
+
+    <Hr />
+
+    <section id="recent-posts">
+      <h2>Recent Posts</h2>      
+      {
+        sortedPosts.map(
+          (post, index) =>
+            index < 4 && (
+              <IndieWebPost
+                post={post}
+                showFullDetails={false}
+              /> 
+            )
+        )
+      }      
+      <div class="all-posts-btn-wrapper">
+        <LinkButton href="/posts">
+          All Posts
+          <svg xmlns="http://www.w3.org/2000/svg"
+            ><path
+              d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"
+            ></path>
+          </svg>
+        </LinkButton>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  /* ===== Hero Section ===== */
+  #hero {
+    @apply pt-8 pb-6;
+  }
+  #hero h1 {
+    @apply my-4 inline-block text-3xl font-bold sm:my-8 sm:text-5xl;
+  }
+  #hero .rss-link {
+    @apply mb-6;
+  }
+  #hero .rss-icon {
+    @apply mb-2 h-6 w-6 scale-110 fill-skin-accent sm:mb-3 sm:scale-125;
+  }
+  #hero p {
+    @apply my-2;
+  }
+  .social-wrapper {
+    @apply mt-4 flex flex-col sm:flex-row sm:items-center;
+  }
+  .social-links {
+    @apply mr-2 mb-1 whitespace-nowrap sm:mb-0;
+  }
+
+  /* ===== Featured & Recent Posts Sections ===== */
+  #featured,
+  #recent-posts {
+    @apply pt-12 pb-6;
+  }
+  #featured h2,
+  #recent-posts h2 {
+    @apply text-2xl font-semibold tracking-wide;
+  }
+  .all-posts-btn-wrapper {
+    @apply my-8 text-center;
+  }
+</style>

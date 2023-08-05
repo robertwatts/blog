@@ -1,0 +1,75 @@
+---
+import type { BlogFrontmatter } from "@content/_schemas";
+import contentTypeIcons from "@assets/contentTypeIcons";
+import LinkButton from "./LinkButton.astro";
+import type { CollectionEntry } from "astro:content";
+import getContentType from "@utils/getContentType";
+import type { ContentType } from "types";
+
+
+export interface Props {
+  post: CollectionEntry<"blog">;
+  showFullDetails: boolean;
+}
+
+const { post, showFullDetails } = Astro.props;
+
+const { title, ogImage, date, summary } = post.data;
+
+const bookmarkOf = post.data['bookmark-of'];
+const likeOf = post.data['like-of'];
+const inReplyTo = post.data['in-reply-to'];
+const rsvp = post.data['rsvp'];
+
+const author = 'Rob Watts';
+
+const { Content } = await post.render();
+
+const ogUrl = new URL(ogImage ? ogImage : `${title}.png`, Astro.url.origin)
+  .href;
+
+const contentType = getContentType(post.id);
+
+const postLink = inReplyTo ? inReplyTo : likeOf ? likeOf : bookmarkOf ? bookmarkOf : contentType == 'Article' ? 'dave' : null;
+const postLinkClass = inReplyTo ? 'u-in-reply-to' : likeOf ? 'u-like-of' : bookmarkOf ? 'u-bookmark-of' : rsvp ? 'u-rsvp' : null;
+---
+<article class="h-entry">
+  <header>
+    <Fragment set:html={contentTypeIcons[contentType]} />
+    { postLink && 
+      <a 
+        href={postLink}
+        class={`${postLinkClass} inline-block text-lg font-medium text-skin-accent decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0`}>
+        <h2 class="post-title">{title}</h2>
+      </a> 
+    }
+    { contentType == 'Note' && 
+      <span class="inline-block text-lg font-medium decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0">
+        <h2 class="post-title">{post.body}</h2>
+      </span>
+    }
+  </header>
+
+  { !showFullDetails && contentType != 'Note' && summary &&
+    <div class="e-summary">
+      {summary}
+    </div>
+  }
+
+  { showFullDetails && contentType != 'Note' && post.body &&
+    <div class="e-content">
+      <Content />
+    </div>
+  }
+  
+  <footer>
+    <a class="h-card u-url" href="https://robwatts.org/about"><span class="p-name">{author}</span></a>Published:
+    <time class="dt-published" dateTime="2023-05-18T20:44:52.734Z">Thu May 18 2023</time>
+  </footer>
+</article>
+
+<style>
+  .post-title {
+    @apply flex-wrap justify-center gap-1;
+  }
+</style>

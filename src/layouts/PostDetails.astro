@@ -1,0 +1,76 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import Datetime from "@components/Datetime";
+import ContentType from "@components/ContentType";
+import type { CollectionEntry } from "astro:content";
+import getContentType from "@utils/getContentType";
+
+export interface Props {
+  post: CollectionEntry<"blog">;
+}
+
+const { post } = Astro.props;
+
+const { title, summary, ogImage, date } = post.data;
+
+const author = 'Rob Watts';
+
+const { Content } = await post.render();
+
+const ogUrl = new URL(ogImage ? ogImage : `${title}.png`, Astro.url.origin)
+  .href;
+
+const contentType = getContentType(post.id);
+---
+
+<Layout title={title} author={author} description={summary} ogImage={ogUrl}>
+  <Header />
+  <div class="mx-auto flex w-full max-w-3xl justify-start px-2">
+    <button
+      class="focus-outline mt-8 mb-2 flex hover:opacity-75"
+      onclick="history.back()"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg"
+        ><path
+          d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"
+        ></path>
+      </svg><span>Go back</span>
+    </button>
+  </div>
+  <main id="main-content">
+    <article id="article" role="article" class="h-entry prose mx-auto mt-8 max-w-3xl">
+      <header>
+        <ContentType id={post.id} size="lg" className="my-2" />
+        { title && <h1 class="post-title">{title}</h1> }
+      </header>      
+      
+      <div class="e-content">
+        <Content />
+      </div>
+
+
+
+      <footer>
+        <a class="h-card u-url" href="https://robwatts.org/about">
+          <span class="p-name">{author}</span>
+        </a> 
+        <Datetime datetime={date} size="lg" className="my-2" /> 
+      </footer>
+    </article>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  main {
+    @apply mx-auto w-full max-w-3xl px-4 pb-12;
+  }
+  .post-title {
+    @apply text-2xl font-semibold text-skin-accent;
+  }
+  .tags-container {
+    @apply my-8;
+  }
+</style>
